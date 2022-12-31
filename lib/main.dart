@@ -37,14 +37,18 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const <Widget>[
+        children: <Widget>[
           Card(
             elevation: 5,
             margin: EdgeInsets.all(10.0),
             child: Text('CHART!'),
           ),
-          Card(
-            child: Text('LIST OF TRANSACTIONS!!'),
+          Column(
+            children: transactions.map((tx) {
+              return Card(
+                child: Text(tx.title),
+              );
+            }).toList(),
           ),
         ],
       ),
