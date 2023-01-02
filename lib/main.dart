@@ -44,6 +44,40 @@ class MyHomePage extends StatelessWidget {
             margin: EdgeInsets.all(10.0),
             child: Text('CHART!'),
           ),
+          Card(
+            child: Container(
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 11.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'TItle',
+                      ),
+                    ),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Amount',
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(
+                      vertical: 5,
+                    ),
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Add Transaction".toUpperCase()),
+                      // style: ButtonStyle(maximumSize: Size)),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
           Column(
             children: transactions.map((tx) {
               return Card(
