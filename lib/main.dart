@@ -30,6 +30,9 @@ class MyHomePage extends StatelessWidget {
     ),
   ];
 
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +58,7 @@ class MyHomePage extends StatelessWidget {
                         border: OutlineInputBorder(),
                         labelText: 'TItle',
                       ),
+                      controller: titleController,
                     ),
                   ),
                   TextField(
@@ -62,6 +66,7 @@ class MyHomePage extends StatelessWidget {
                       border: OutlineInputBorder(),
                       labelText: 'Amount',
                     ),
+                    controller: amountController,
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(
@@ -69,7 +74,10 @@ class MyHomePage extends StatelessWidget {
                     ),
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        print(titleController.text);
+                        print(amountController.text);
+                      },
                       child: Text("Add Transaction".toUpperCase()),
                       // style: ButtonStyle(maximumSize: Size)),
                     ),
